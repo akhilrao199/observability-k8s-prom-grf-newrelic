@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: crashloop
+spec:
+  containers:
+  - name: crash
+    image: busybox
+    command: ["/bin/sh"]
+    args: ["-c", "exit 1"]
+    imagePullPolicy: IfNotPresent
+  restartPolicy: Always
